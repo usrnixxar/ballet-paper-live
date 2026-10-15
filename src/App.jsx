@@ -81,8 +81,8 @@ export default function App(){
         if(active)setCandidates(rows.map(c=>({...c,votes:results.counts[c.id]||0,imageUrl:c.imageUrl?API_URL+c.imageUrl:null})));
         if(active)setDailyVotes(results.daily.flatMap(d=>Array.from({length:Math.min(d.count,1000)},()=>({day:d.day}))));
       }else{
-        const results=await pollRpc('poll_results');
-        if(active)setCandidates(prev=>prev.map(c=>({...c,votes:Number(results.counts?.[c.id]||0)})));
+        const [results,candidateList]=await Promise.all([pollRpc('poll_results'),pollRpc('poll_candidates')]);
+        if(active)setCandidates(candidateList.map(c=>({...c,votes:Number(results.counts?.[c.id]||0)})));
         if(active)setDailyVotes((results.daily||[]).flatMap(d=>Array.from({length:Math.min(Number(d.count),1000)},()=>({day:d.day}))));
       }
     }catch(e){if(active)setFormError('Results connection: '+e.message);}}
