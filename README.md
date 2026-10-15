@@ -34,3 +34,11 @@ To enable *real* verified voting, live candidate updates and visitor analytics:
 5. Redeploy the frontend. Its forms will require email OTP and the counts will be taken from the backend. Admin dashboard is at `https://YOUR-BACKEND/admin`.
 
 **Important:** Without `VITE_API_URL` the current frontend remains a local demonstration. It does not save votes server-side. No official election or government affiliation is implied.
+
+## New live repository and Supabase
+This repository is linked in its source to the **Ballot Paper** Supabase project `qqhkfygovznykpvknbrv`.
+Without `VITE_API_URL`, public opinion vote submissions use the Supabase `cast_poll_vote` RPC. Results and candidate names/images read the `poll_results` and `poll_candidates` RPCs. Votes are persisted across refreshes and visitors.
+
+Admin panel source is in https://github.com/usrnixxar/Ballet-backend. To connect its admin API to the same tables, its deployment needs a private `DATABASE_URL` obtained from the Ballot Paper Supabase project along with `JWT_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and SMTP settings. Set `FRONTEND_ORIGIN` to the new live frontend origin. Do not put the DB URL or any password in this frontend repo.
+
+**Safety limitation:** Direct public RPC uses entered DOB and unverified email; it is suitable only as a non-official public opinion demo. Before promoting it as a trusted poll, replace public casting with verified, rate-limited server-side voting. Do not imply an Election Commission affiliation.
