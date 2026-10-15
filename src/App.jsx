@@ -78,7 +78,7 @@ export default function App(){
     async function refresh(){try{
       if(API_URL){
         const [rows,results]=await Promise.all([api('public/candidates'),api('public/results')]);
-        if(active)setCandidates(rows.map(c=>({...c,votes:results.counts[c.id]||0,imageUrl:c.imageUrl?API_URL+c.imageUrl:null})));
+        if(active)setCandidates(rows.map(c=>({...c,votes:results.counts[c.id]||0,imageUrl:c.imageUrl?(c.imageUrl.startsWith('data:')||/^https?:\/\//i.test(c.imageUrl)||c.imageUrl.startsWith('/images/')?c.imageUrl:API_URL+c.imageUrl):null})));
         if(active)setDailyVotes(results.daily.flatMap(d=>Array.from({length:Math.min(d.count,1000)},()=>({day:d.day}))));
       }else{
         const [results,candidateList]=await Promise.all([pollRpc('poll_results'),pollRpc('poll_candidates')]);
