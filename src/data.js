@@ -1,9 +1,13 @@
-// Candidate id joins ballot cards and result rows. Set imageUrl to a PNG/WEBP URL from your future backend storage; null displays the built-in SVG symbol.\n// Example: imageUrl:'https://YOUR-PROJECT.supabase.co/storage/v1/object/public/candidate-symbols/star.png'
-export const election = { title: 'Online Election', subtitle: 'Your Vote  •  Your Voice  •  A Stronger Tomorrow' };
+// Party order (1–5) is ballot position, not any official electoral ranking.
+// Names and images load from Supabase; these values provide a visible fallback.
+export const election = {
+  title: 'Online Election',
+  subtitle: 'Our Vote • Our Right • Independent Public Opinion'
+};
 export const initialCandidates = [
-  {id:1,name:'Candidate 1',symbol:'star',color:'#e9a400',votes:0,imageUrl:null},
-  {id:2,name:'Candidate 2',symbol:'book',color:'#ef3545',votes:0,imageUrl:null},
-  {id:3,name:'Candidate 3',symbol:'tree',color:'#12af65',votes:0,imageUrl:null},
-  {id:4,name:'Candidate 4',symbol:'lamp',color:'#6f4bf4',votes:0,imageUrl:null},
-  {id:5,name:'Candidate 5',symbol:'wheel',color:'#1479e9',votes:0,imageUrl:null}
+  {id:1,name:'Bharatiya Janata Party',shortName:'BJP',symbol:'star',color:'#F28C28',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/BJP_Election_Symbol.svg'},
+  {id:2,name:'Indian National Congress',shortName:'Congress',symbol:'book',color:'#1585CD',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Indian_National_Congress_hand_logo.svg'},
+  {id:3,name:'Cockroach Janta Party',shortName:'CJP',symbol:'tree',color:'#2F865B',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Cockroach_Janta_Party_logo.svg'},
+  {id:4,name:'Samajwadi Party',shortName:'SP',symbol:'lamp',color:'#D12832',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Samajwadi_Party.png'},
+  {id:5,name:'Tamilaga Vettri Kazhagam',shortName:'TVK',symbol:'wheel',color:'#AD283E',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Tamilaga_Vettri_Kazhagam_(TVK)_Flag.png'}
 ];
