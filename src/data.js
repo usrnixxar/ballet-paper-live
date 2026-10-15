@@ -5,9 +5,9 @@ export const election = {
   subtitle: 'Our Vote • Our Right • Independent Public Opinion'
 };
 export const initialCandidates = [
-  {id:1,name:'Bharatiya Janata Party',shortName:'BJP',symbol:'star',color:'#F28C28',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/BJP_Election_Symbol.svg'},
-  {id:2,name:'Indian National Congress',shortName:'Congress',symbol:'book',color:'#1585CD',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Indian_National_Congress_hand_logo.svg'},
-  {id:3,name:'Cockroach Janta Party',shortName:'CJP',symbol:'tree',color:'#2F865B',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Cockroach_Janta_Party_logo.svg'},
-  {id:4,name:'Samajwadi Party',shortName:'SP',symbol:'lamp',color:'#D12832',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Samajwadi_Party.png'},
-  {id:5,name:'Tamilaga Vettri Kazhagam',shortName:'TVK',symbol:'wheel',color:'#AD283E',votes:0,imageUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Tamilaga_Vettri_Kazhagam_(TVK)_Flag.png'}
+  {id:1,name:'Bharatiya Janata Party',shortName:'BJP',symbol:'star',color:'#F28C28',votes:0,imageUrl:'https://upload.wikimedia.org/wikipedia/commons/2/23/BJP_Election_Symbol.svg'},
+  {id:2,name:'Indian National Congress',shortName:'Congress',symbol:'book',color:'#1585CD',votes:0,imageUrl:'https://upload.wikimedia.org/wikipedia/commons/6/6c/Indian_National_Congress_hand_logo.svg'},
+  {id:3,name:'Cockroach Janta Party',shortName:'CJP',symbol:'tree',color:'#2F865B',votes:0,imageUrl:'https://upload.wikimedia.org/wikipedia/commons/1/1b/Cockroach_Janta_Party_logo.svg'},
+  {id:4,name:'Samajwadi Party',shortName:'SP',symbol:'lamp',color:'#D12832',votes:0,imageUrl:'https://upload.wikimedia.org/wikipedia/commons/c/c3/Samajwadi_Party.png'},
+  {id:5,name:'Tamilaga Vettri Kazhagam',shortName:'TVK',symbol:'wheel',color:'#AD283E',votes:0,imageUrl:'https://upload.wikimedia.org/wikipedia/commons/c/c9/Tamilaga_Vettri_Kazhagam_%28TVK%29_Flag.png'}
 ];
