@@ -72,6 +72,19 @@ export default function App(){
   const [formError,setFormError]=useState('');
   const [formBusy,setFormBusy]=useState(false);
   useEffect(()=>{musicRef.current=createAnthemPiano();return()=>{window.clearTimeout(timer.current);window.clearTimeout(resultTimer.current);musicRef.current?.dispose();}},[]);
+  useEffect(()=>{
+    let active=true;
+    const loadAudio=async()=>{
+      try{
+        const settings=await pollRpc('poll_audio_config');
+        if(active)musicRef.current?.configure(settings);
+      }catch(err){console.warn('Audio settings unavailable; using built-in track');}
+    };
+    loadAudio();
+    const interval=window.setInterval(loadAudio,30000);
+    return()=>{active=false;window.clearInterval(interval);};
+  },[]);
+
   function startMusic(){if(muted)return;musicRef.current?.start().catch(()=>{setAudioError(true);});}
   function toggleAudio(){if(muted){setMuted(false);setAudioError(false);musicRef.current?.start().catch(()=>setAudioError(true));}else{musicRef.current?.stop();setMuted(true);}}
   useEffect(()=>{
