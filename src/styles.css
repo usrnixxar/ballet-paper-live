@@ -296,3 +296,15 @@
 .result-symbol img{width:43px;height:43px;object-fit:contain}
 @media(max-width:800px){.paper .paper-name{gap:3px}.paper-image-area img.paper-symbol{max-height:105px}.ballot-position{font-size:12px}.ballot-party-fullname{font-size:10px}}
 @media(max-width:480px){.party-abbrev{font-size:11px}.party-fullname{font-size:10px}.paper-image-area img.paper-symbol{max-height:95px}.ballot-party-fullname{font-size:9px}}
+
+/* A prominently disclosed illustrative counter: never present sample entries as real votes. */
+.results-hero .hero-art{min-height:385px;padding-bottom:85px}
+.results-hero .hero-art .demo-total-label{position:relative;z-index:2;max-width:300px;margin:7px 0 4px;font-size:12px;line-height:1.4;font-weight:900;letter-spacing:.01em;color:#8c4300}
+.results-hero .hero-art .demo-total-breakdown{position:relative;z-index:2;margin:5px 0 4px;max-width:255px;font-size:12px;font-weight:850;color:#1a4372}
+.results-hero .hero-art .demo-total-disclosure{position:relative;z-index:2;max-width:235px;margin-top:7px;font-size:11px;line-height:1.45;color:#36577e;background:#ffffffd9;padding:6px 8px;border-left:3px solid #e58d20;border-radius:3px}
+.results-hero .hero-art>.total-count{position:relative;z-index:2}
+.results-hero .ballot-illustration{left:auto;right:10px;top:auto;bottom:56px;transform:none;width:clamp(106px,11vw,150px);height:125px;opacity:.75}
+.result-row{grid-template-columns:30px 54px minmax(94px,1fr) 66px minmax(95px,1.5fr) 94px}
+@media(max-width:1150px){.result-row{grid-template-columns:25px 38px minmax(75px,1fr) 58px minmax(70px,1fr)}.result-row .leading{display:none}}
+@media(max-width:770px){.results-hero .hero-art{min-height:315px}.result-row{grid-template-columns:24px 38px minmax(70px,1fr) 58px minmax(62px,1fr)}.results-hero .ballot-illustration{width:125px;height:105px;left:auto;right:12px;top:auto;bottom:46px;transform:none}}
+@media(max-width:480px){.results-hero .hero-art{min-height:340px;padding:13px 14px 82px}.results-hero .hero-art .demo-total-label{font-size:11px;max-width:265px}.results-hero .hero-art .demo-total-breakdown{font-size:11px;max-width:245px}.results-hero .hero-art .demo-total-disclosure{font-size:10px;max-width:210px}.results-hero .ballot-illustration{width:95px;height:82px;right:10px;bottom:49px;left:auto;top:auto;transform:none}.result-row{grid-template-columns:20px 28px minmax(72px,1fr) 52px;gap:5px}.result-row .bar-track{grid-column:3/-1}}
